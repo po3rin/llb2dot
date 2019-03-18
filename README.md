@@ -1,6 +1,6 @@
 # llb2dot
 
-<img src="https://img.shields.io/badge/go-v1.11-blue.svg"/>
+<img src="https://img.shields.io/badge/go-v1.11-blue.svg"/> [![CircleCI](https://circleci.com/gh/po3rin/llb2dot.svg?style=shield)](https://circleci.com/gh/po3rin/llb2dot) [![GolangCI](https://golangci.com/badges/github.com/po3rin/llb2dot.svg)](https://golangci.com)
 
 llb2dot package lets you to convert BuildKit LLB to dot language to analize. You also can load Dockerfile directory.
 
