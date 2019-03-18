@@ -8,9 +8,8 @@ llb2dot package lets you to convert BuildKit LLB to dot language to analize. You
 
 ## Installation
 
-```bash
-$ go get -u github.com/po3rin/llb2dot/cmd/llb2dot
-```
+from here
+https://github.com/po3rin/llb2dot/releases
 
 ## Usage
 
