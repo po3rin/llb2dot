@@ -4,7 +4,7 @@
 
 llb2dot package lets you to convert BuildKit LLB to dot language to analize. You also can load Dockerfile directory.
 
-<img src="static/example.png">
+<img src="static/example.png" width="80%">
 
 ## Installation
 
