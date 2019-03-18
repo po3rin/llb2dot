@@ -1,0 +1,13 @@
+builds:
+  - main: cmd/llb2dot/main.go
+    binary: llb2dot
+    goos:
+      - windows
+      - darwin
+      - linux
+    goarch:
+      - amd64
+release:
+  github:
+    owner: po3rin
+    name: llb2dot
