@@ -28,6 +28,9 @@ func (llbOp LLBOp) getDesc() string {
 	if !ok {
 		desc, ok = llbOp.OpMetadata.Description["llb.customname"]
 		if !ok {
+			if len(llbOp.Digest) < 10 {
+				return string(llbOp.Digest)
+			}
 			return string(llbOp.Digest[:10]) + "..."
 		}
 	}

@@ -31,8 +31,8 @@ func TestLLB2Graph(t *testing.T) {
 			},
 			want: []byte(`strict digraph llb {
 // Node definitions.
-"aaaaaaaaaa..." [digest=aaaaaaaaaaaa];
-"bbbbbbbbbb..." [digest=bbbbbbbbbbbb];
+"aaaaaaaaaa...";
+"bbbbbbbbbb...";
 
 // Edge definitions.
 "aaaaaaaaaa..." -> "bbbbbbbbbb...";
