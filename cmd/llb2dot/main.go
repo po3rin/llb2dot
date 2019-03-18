@@ -56,6 +56,10 @@ func action(c *cli.Context) error {
 	if err != nil {
 		return err
 	}
-	llb2dot.WriteDOT(os.Stdout, g)
+
+	err = llb2dot.WriteDOT(os.Stdout, g)
+	if err != nil {
+		return err
+	}
 	return nil
 }

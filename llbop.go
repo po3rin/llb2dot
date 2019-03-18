@@ -72,5 +72,8 @@ func LoadDockerfile(r io.Reader) ([]LLBOp, error) {
 	}
 
 	def, err := state.Marshal()
+	if err != nil {
+		return nil, err
+	}
 	return def2Op(def)
 }

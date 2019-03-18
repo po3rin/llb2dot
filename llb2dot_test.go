@@ -46,7 +46,11 @@ func TestLLB2Graph(t *testing.T) {
 		}
 
 		var got bytes.Buffer
-		llb2dot.WriteDOT(&got, g)
+		err := llb2dot.WriteDOT(&got, g)
+		if err != nil {
+			t.Fatalf("Unexpected error : %+v", err)
+		}
+
 		if string(got.String()) != string(tt.want) {
 			t.Fatalf("failed test. want: %+v, got: %+v", string(tt.want), got.String())
 		}
