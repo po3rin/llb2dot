@@ -1,4 +1,4 @@
-var app6 = new Vue({
+let app = new Vue({
     el: '#app',
     data: {
         dockerfile: 'FROM golang:1.12',
@@ -13,8 +13,8 @@ var app6 = new Vue({
     },
     computed: {
         image: function(){
-            var image = Viz(this.dots, {format: 'svg'});
-            return image;
+            var image = Viz(this.dots, {format: 'svg'})
+            return image
         }
     },
     methods: {
