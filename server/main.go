@@ -7,12 +7,16 @@ import (
 )
 
 func main() {
-	http.HandleFunc("/", Handler)
+	fs := http.FileServer(http.Dir("view"))
+	http.Handle("/", fs)
+	http.HandleFunc("/api/dot", Handler)
 	http.ListenAndServe(":8080", nil)
 }
 
 // Handler handle request.
 func Handler(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "text/plain")
+
 	ops, err := llb2dot.LoadDockerfile(r.Body)
 	if err != nil {
 		http.Error(w, err.Error(), 500)
@@ -25,10 +29,10 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	w.WriteHeader(200)
 	err = llb2dot.WriteDOT(w, g)
 	if err != nil {
 		http.Error(w, err.Error(), 500)
 		return
 	}
-	w.WriteHeader(200)
 }

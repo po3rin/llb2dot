@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"os"
 
@@ -51,6 +52,8 @@ func action(c *cli.Context) error {
 			return err
 		}
 	}
+
+	fmt.Println("map:", ops)
 
 	g, err := llb2dot.LLB2Graph(ops)
 	if err != nil {

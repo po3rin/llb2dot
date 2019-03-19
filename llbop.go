@@ -38,7 +38,7 @@ func (llbOp LLBOp) getDesc() string {
 }
 
 func def2Op(def *llb.Definition) ([]LLBOp, error) {
-	ops := make([]LLBOp, len(def.Def))
+	ops := make([]LLBOp, 0, len(def.Def))
 	for _, dt := range def.Def {
 		var op pb.Op
 		if err := (&op).Unmarshal(dt); err != nil {
