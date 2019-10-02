@@ -1,6 +1,6 @@
 module github.com/po3rin/llb2dot
 
-go 1.12
+go 1.13
 
 require (
 	github.com/moby/buildkit v0.4.0
