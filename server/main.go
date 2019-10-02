@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log"
 	"net/http"
 
 	"github.com/po3rin/llb2dot"
@@ -10,7 +11,10 @@ func main() {
 	fs := http.FileServer(http.Dir("view"))
 	http.Handle("/", fs)
 	http.HandleFunc("/api/dot", Handler)
-	http.ListenAndServe(":8080", nil)
+	err := htta.ListenAndServe(":8080", nil)
+	if err != nil {
+		log.Fatal("failed to listen 8080 port")
+	}
 }
 
 // Handler handle request.
