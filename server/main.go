@@ -11,7 +11,7 @@ func main() {
 	fs := http.FileServer(http.Dir("view"))
 	http.Handle("/", fs)
 	http.HandleFunc("/api/dot", Handler)
-	err := htta.ListenAndServe(":8080", nil)
+	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
 		log.Fatal("failed to listen 8080 port")
 	}
